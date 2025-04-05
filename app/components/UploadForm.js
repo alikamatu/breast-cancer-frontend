@@ -34,7 +34,7 @@ const PredictionForm = () => {
     setError("");
 
     try {
-      const response = await axios.post("https://breast-cancer-backend.vercel.app/predict", formData);
+      const response = await axios.post("https://breast-cancer-backend-z37n.onrender.com/predict", formData);
       setPrediction(response.data.prediction);
     } catch (err) {
       setError("An error occurred while predicting. Please try again.");
