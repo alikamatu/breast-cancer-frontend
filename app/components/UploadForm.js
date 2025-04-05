@@ -46,7 +46,7 @@ const PredictionForm = () => {
   const handleGenerateReport = async () => {
     try {
       const response = await axios.post(
-        "https://breast-cancer-backend.vercel.app/generate-report",
+        "https://breast-cancer-backend-z37n.onrender.com/generate-report",
         {
           patientName,
           patientId,
@@ -73,7 +73,7 @@ const PredictionForm = () => {
 
   const fetchHistory = async () => {
     try {
-      const response = await axios.get("https://breast-cancer-backend.vercel.app/history");
+      const response = await axios.get("https://breast-cancer-backend-z37n.onrender.com/history");
       setHistory(response.data);
       setShowHistory(!showHistory);
     } catch (err) {
