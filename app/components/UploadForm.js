@@ -34,7 +34,7 @@ const PredictionForm = () => {
     setError("");
 
     try {
-      const response = await axios.post("https://breast-cancer-backend-z37n.onrender.com/predict", formData);
+      const response = await axios.post("http://localhost:5000/predict", formData);
       setPrediction(response.data.prediction);
     } catch (err) {
       setError("An error occurred while predicting. Please try again.");
@@ -46,7 +46,7 @@ const PredictionForm = () => {
   const handleGenerateReport = async () => {
     try {
       const response = await axios.post(
-        "https://breast-cancer-backend-z37n.onrender.com/generate-report",
+        "http://localhost:5000/generate-report",
         {
           patientName,
           patientId,
@@ -73,7 +73,7 @@ const PredictionForm = () => {
 
   const fetchHistory = async () => {
     try {
-      const response = await axios.get("https://breast-cancer-backend-z37n.onrender.com/history");
+      const response = await axios.get("http://localhost:5000/history");
       setHistory(response.data);
       setShowHistory(!showHistory);
     } catch (err) {
